@@ -1,0 +1,7 @@
+/* Only hide obvious static banner ads */
+.ytd-ad-slot-renderer,
+.ad-container,
+div[id^="google_ads_"],
+iframe[id^="google_ads_"] {
+    display: none !important;
+}

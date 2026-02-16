@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Shield Pro - Enterprise AdBlocker",
+  "version": "2.0",
+  "permissions": [
+    "declarativeNetRequest",
+    "storage",
+    "scripting",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.jpg"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.jpg"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["cosmetic.css"],
+      "js": ["youtube.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  }
+}
